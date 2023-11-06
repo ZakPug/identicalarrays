@@ -1,3 +1,5 @@
+//Zakwan Berlin
+
 import java.util.Scanner;
 
 public class IdenticalArray {
@@ -10,7 +12,7 @@ public class IdenticalArray {
         System.out.println("Enter the second 3x3 array:");
         int[][] m2 = enterMatrix();
 
-        // Check if the arrays are identical and display the result
+        // Check if the arrays are the same, display the result
         if (areIdentical(m1, m2)) {
             System.out.println("The two arrays are identical.");
         } else {
@@ -20,13 +22,13 @@ public class IdenticalArray {
 
     public static boolean areIdentical(int[][] m1, int[][] m2) {
         if (m1.length != m2.length || m1[0].length != m2[0].length) {
-            return false; // Arrays have different dimensions, so they can't be identical.
+            return false; // Arrays are different , not identical try again.
         }
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (m1[i][j] != m2[i][j]) {
-                    return false; // Arrays have different elements, so they can't be identical.
+                    return false; //Arrays are different , not identical try again.
                 }
             }
         }
@@ -44,6 +46,7 @@ public class IdenticalArray {
                 matrix[i][j] = input.nextInt();
             }
         }
+      input.close(); // Close the Scanner object
 
         return matrix;
     }
